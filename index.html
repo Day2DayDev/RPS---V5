@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<div class="masterDiv">
+<div class="headDiv">
+<div class="mainDiv">
+<body class="bodyBg">
+
+<div class="backgroundBtns">
+    <button class="mainBG" onclick="backgroundRdm1()" id="backgroundbutton">
+        <img src="images/mainbg1.png" alt="main background">
+        <audio src="/audio/mainBackground.mp3" id="myAudio5"></audio>
+    </button>
+    
+    <button class="altBG" onclick="backgroundRdm2()"  id="backgroundbutton">
+        <img src="images/map.png">
+        <audio src="/audio/multibackground.mp3" id="myAudio6"></audio>
+    </button>
+</div> 
+
+    
+<!--<progress value="0" max="10" id="progressBar"></progress>-->
+ 
+<div class="count">
+<p id="cntDown"></p>
+</div>
+
+<div class="healthBar">
+<img src="images/healthbar.png">
+    </div>
+
+    <div class="scoresSection">
+        
+        <p class="p-score inputBox"> Player Score:</p>
+      
+        <p class="pc-score inputBox"> Computer Score:</p>
+            </div>
+            
+       
+
+  
+
+        <div class="choose">
+            <button class="musicBtn" onclick="playRandomAudio(audioArr)">
+                <img src="images/music.png">
+            </button>
+        <p class="move inputBox"> JUKEBOX </p>
+        </div>
+
+
+        <div class="movesleft">
+            <p class="movesLeft inputBox remainder"> Moves Left: 10</p>
+        </div>
+            
+
+ <div class="mainBtn-container">
+
+
+    <div class="btn-container chunli">
+        <button class="rockEl buttonZ chunliSound">
+            <img src="images/chunli.png" >ROCK</button>
+            <audio src="/audio/chunkick.mp3" id="myAudio"></audio>
+           
+        </div>
+        
+    <div class="btn-container dalsim ">
+        <button class="paperEl buttonZ  dalsimSound">
+            <img src="images/dalsim.png">PAPER</button>
+            <audio src="/audio/dhalsim.mp3" id="myAudio2"></audio>
+            </div>
+
+
+    <div class="btn-container ryu">
+        <button class="scissorEl buttonZ  ryuSound">
+            <img src="images/ryu.png">SCISSORS</button>
+            <audio src="/audio/ryu.mp3" id="myAudio3"></audio>
+             </div>
+                  </div>       
+    
+
+    <div class="newGame">
+            <button class="reload"> Game Credits ( 1 ) 
+                <audio src="/audio/coin.mp3" id="myAudio7"></audio>
+            </button>
+            <p class="roundResult">Round Results: </p>
+    </div>
+
+    <div class="newGameFinal">
+    <button class="masterreload"  onclick()>
+        <img src="images/reset.png">New Game</button>
+        <audio src="/audio/reset.mp3" id="myAudio4"></audio><!--can't get this audo to work on purple reset button-->
+        
+        </div>
+
+
+        </div><!-- closing main div-->
+
+    </div><!--closing head div-->
+
+</div>
+
+
+
+    <script src="index.js"></script> 
+</body>
+</html>
