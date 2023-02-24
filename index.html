@@ -12,15 +12,16 @@
 <div class="mainDiv">
 <body class="bodyBg">
 
+  <h3 id="chooseBackground">Choose a background</h3>
 <div class="backgroundBtns">
     <button class="mainBG" onclick="backgroundRdm1()" id="backgroundbutton">
         <img src="images/mainbg1.png" alt="main background">
-        <audio src="/audio/mainBackground.mp3" id="myAudio5"></audio>
+        <audio src="./audio/mainBackground.mp3" id="myAudio5"></audio>
     </button>
     
     <button class="altBG" onclick="backgroundRdm2()"  id="backgroundbutton">
         <img src="images/map.png">
-        <audio src="/audio/multibackground.mp3" id="myAudio6"></audio>
+        <audio src="./audio/multibackground.mp3" id="myAudio6"></audio>
     </button>
 </div> 
 
@@ -37,21 +38,18 @@
 
     <div class="scoresSection">
         
-        <p class="p-score inputBox"> Player Score:</p>
+        <p class="p-score inputBox"> Player One Score: 0</p>
+
+        <p class="roundResult">Round Results: </p>
       
-        <p class="pc-score inputBox"> Computer Score:</p>
+        <p class="pc-score inputBox"> Computer Score: 0</p>
             </div>
             
        
 
   
 
-        <div class="choose">
-            <button class="musicBtn" onclick="playRandomAudio(audioArr)">
-                <img src="images/music.png">
-            </button>
-        <p class="move inputBox"> JUKEBOX </p>
-        </div>
+
 
 
         <div class="movesleft">
@@ -65,37 +63,49 @@
     <div class="btn-container chunli">
         <button class="rockEl buttonZ chunliSound">
             <img src="images/chunli.png" >ROCK</button>
-            <audio src="/audio/chunkick.mp3" id="myAudio"></audio>
+            <audio src="./audio/chunkick.mp3" id="myAudio"></audio>
            
         </div>
         
     <div class="btn-container dalsim ">
         <button class="paperEl buttonZ  dalsimSound">
             <img src="images/dalsim.png">PAPER</button>
-            <audio src="/audio/dhalsim.mp3" id="myAudio2"></audio>
+            <audio src="./audio/dhalsim.mp3" id="myAudio2"></audio>
             </div>
 
 
     <div class="btn-container ryu">
         <button class="scissorEl buttonZ  ryuSound">
             <img src="images/ryu.png">SCISSORS</button>
-            <audio src="/audio/ryu.mp3" id="myAudio3"></audio>
+            <audio src="./audio/ryu.mp3" id="myAudio3"></audio>
              </div>
                   </div>       
     
 
     <div class="newGame">
             <button class="reload"> Game Credits ( 1 ) 
-                <audio src="/audio/coin.mp3" id="myAudio7"></audio>
+                <audio src="./audio/coin.mp3" id="myAudio7"></audio>
             </button>
-            <p class="roundResult">Round Results: </p>
+            
     </div>
 
     <div class="newGameFinal">
     <button class="masterreload"  onclick()>
         <img src="images/reset.png">New Game</button>
-        <audio src="/audio/reset.mp3" id="myAudio4"></audio><!--can't get this audo to work on purple reset button-->
+        <audio src="./audio/reset.mp3" id="myAudio4"></audio><!--can't get this audo to work on purple reset button-->
         
+        </div>
+
+        <div class="choose">
+            <button class="musicBtn" onclick="playRandomAudio(audioArr)">
+                <img src="images/music.png">
+            </button>
+
+            <button class="musicBtn2" onclick="pauseRandomAudio(audioArr)">
+                <img src="images/music.png">
+            </button>
+       
+        <p class="move inputBox"> JUKEBOX </p>
         </div>
 
 

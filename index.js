@@ -18,23 +18,27 @@ function backgroundRdm2(){
 
 //jukebox
 const audioArr = [
-    new Audio('/audio/Theme-balrog.mp3'),
-    new Audio('/audio/Theme-bison.mp3'),
-    new Audio('/audio/Theme-blanka.mp3'),
-    new Audio('/audio/Theme-chunli.mp3'),
-    new Audio('/audio/Theme-dalsim.mp3'),
-    new Audio('/audio/Theme-ehonda.mp3')
+    new Audio('./audio/Theme-balrog.mp3'),
+    new Audio('./audio/Theme-bison.mp3'),
+    new Audio('./audio/Theme-blanka.mp3'),
+    new Audio('./audio/Theme-chunli.mp3'),
+    new Audio('./audio/Theme-dalsim.mp3'),
+    new Audio('./audio/Theme-ehonda.mp3')
 ];
-
-
 
 function playRandomAudio(){
     //Get a random index of the sound to be played
     const randomAudioIndex = Math.floor(Math.random() * (audioArr.length+1));
-
     //Play the selected sound
-    audioArr[randomAudioIndex].play();
+    audioArr[randomAudioIndex].play();  
 }
+function pauseRandomAudio(){
+    audioArr.forEach(i=>i.pause());//this took me 3 hours to figure out...
+}
+
+
+   
+
 
 
  let timeleft = 60;
@@ -109,40 +113,69 @@ const winner = (player, computer) => {; //will add notes about this one after.
 
 if (player == computer){
     roundResult.textContent = 'Round Results:  Tie Game';
+    roundResult.style.color = "white";
 }
     else if(player == 'rock'){
         if(computer == 'paper'){
         roundResult.textContent = 'Round Results: Computer Wins';
+        roundResult.style.color = "orange";
         computerScore++;
-        computerScoreBoard.textContent = 'Computers Score: ' + computerScore;   
+        computerScoreBoard.textContent = 'Computers Score: ' + computerScore; 
+        computerScoreBoard.style.transform = `scale(1.1)`
+        computerScoreBoard.style.transition = `all 1s ease`  
+        computerScoreBoard.style.color = "orange"
             }else{
                 roundResult.textContent = 'Round Results: Player Wins';
                 playerScore++;
-                playerScoreBoard.textContent = 'Player Score: ' + playerScore;
+                playerScoreBoard.textContent = "Player One Score: " + playerScore;
+                playerScoreBoard.style.transform = `scale(1.1)`
+                playerScoreBoard.style.transition = `all 1s ease`
+                playerScoreBoard.style.color = "paleturquoise"
+                roundResult.style.color = "paleturquoise";
             }
         }
 
     else if(player == 'paper'){
         if(computer == 'scissors'){
         roundResult.textContent = 'Round Results: Computer Wins';
+        roundResult.style.color = "orange";
+
         computerScore++;
-        computerScoreBoard.textContent = 'Computers Score: ' + computerScore;    
+        computerScoreBoard.textContent = 'Computers Score: ' + computerScore;   
+        computerScoreBoard.style.transform = `scale(1.1)`
+        computerScoreBoard.style.transition = `all 1s ease` 
+        computerScoreBoard.style.color = "orange"
             }else{
                 roundResult.textContent = 'Round Results: Player Wins';
                 playerScore++;
-                playerScoreBoard.textContent = 'Player Score: ' + playerScore;
+                playerScoreBoard.textContent = "Player One Score: " + playerScore;
+                playerScoreBoard.style.transform = `scale(1.1)`
+                playerScoreBoard.style.transition = `all 1s ease`
+                playerScoreBoard.style.color = "paleturquoise"
+                roundResult.style.color = "paleturquoise";
             }
         }
 
     else if(player == 'scissors'){
         if(computer == 'rock'){
         roundResult.textContent = 'Round Results: Computer Wins';
+        roundResult.style.color = "orange";
         computerScore++;
-        computerScoreBoard.textContent = 'Computers Score: ' + computerScore;    
+        computerScoreBoard.textContent = 'Computers Score: ' + computerScore;  
+        computerScoreBoard.style.transform = `scale(1.1)`
+        computerScoreBoard.style.transition = `all 1s ease` 
+        computerScoreBoard.style.color = "orange"
             }else{
                 roundResult.textContent =  'Round Results: Player Wins';
                 playerScore++;
-                playerScoreBoard.textContent = 'Player Score: ' + playerScore;
+                playerScoreBoard.textContent = "Player One Score:" + playerScore;
+                playerScoreBoard.style.transform = `scale(1.1)`
+                playerScoreBoard.style.transition = `all 1s ease`
+                playerScoreBoard.style.color = "paleturquoise"
+                roundResult.style.color = "paleturquoise";
+   
+
+                
                 }
             }
         }
@@ -199,6 +232,7 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             document.getElementById("cntDown").innerHTML = "∞";
            
             result.innerText = "Game Results: Player has won"
+            result.style.color = "paleturquoise";
             win.play(); 
             movesLeft.style.display = 'none'; //this removes the oppotunity to keep playing, removing the "movesLeft" element.
             rockBtn.style.display = 'none'; 
@@ -210,6 +244,7 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             clearInterval(downloadTimer);
             document.getElementById("cntDown").innerHTML  = "∞";
             result.innerText = "Game Results: Computer has won";
+            result.style.color = "orange";
             lose.play();  
             lose2.play();
             
@@ -219,6 +254,7 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             clearInterval(downloadTimer); 
             document.getElementById("cntDown").innerHTML = "∞";
             result.innerText = "Game Results: It is a tie game, try again?";
+            result.style.color = "white";
             tie.play(); 
             
         }
