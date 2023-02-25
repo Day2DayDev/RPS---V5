@@ -234,10 +234,11 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             result.innerText = "Game Results: Player has won"
             result.style.color = "paleturquoise";
             win.play(); 
-            movesLeft.style.display = 'none'; //this removes the oppotunity to keep playing, removing the "movesLeft" element.
-            rockBtn.style.display = 'none'; 
-            
-            
+            movesLeft.innerText="Game Over";
+            document.querySelector('.rockEl').disabled=true//took about 35mins to figure this one out - disabled the rock,paper,scissor buttons when game is over, otherwise, Moves left goes into the negatives!
+            document.querySelector('.paperEl').disabled=true
+            document.querySelector('.scissorEl').disabled=true
+           
         }
         
         else if (playerScore < computerScore){
@@ -247,6 +248,11 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             result.style.color = "orange";
             lose.play();  
             lose2.play();
+            movesLeft.innerText="Game Over";
+            document.querySelector('.rockEl').disabled=true
+            document.querySelector('.paperEl').disabled=true
+            document.querySelector('.scissorEl').disabled=true
+
             
         } 
 
@@ -256,7 +262,10 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             result.innerText = "Game Results: It is a tie game, try again?";
             result.style.color = "white";
             tie.play(); 
-            
+            movesLeft.innerText="Game Over";
+            document.querySelector('.rockEl').disabled=true
+            document.querySelector('.paperEl').disabled=true
+            document.querySelector('.scissorEl').disabled=true
         }
 
 //Now we need to trigger the buttons to restart the game.

@@ -243,6 +243,10 @@ img {
     align-items: center;
 }
 
+.jukeboxContainer {
+    display:flex;
+    justify-content: center;
+}
 .musicBtn{
     background-color: transparent;
     border:none;
