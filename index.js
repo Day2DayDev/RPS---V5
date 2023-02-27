@@ -41,12 +41,17 @@ function pauseRandomAudio(){
 
 
 
- let timeleft = 60;
+ let timeleft = 30;
   const downloadTimer = setInterval(function(){
     
     if(timeleft <= 0){
       clearInterval(downloadTimer);
       document.getElementById("cntDown").innerHTML = "∞";
+      document.querySelector('.rockEl').disabled=true;//holy cow, this took me over 8 hours to figure out. I tried creating new functions to disable the buttons when timer is at ∞ . Makes more sense to code the diabled to the alrady established timer.
+      document.querySelector('.paperEl').disabled=true;
+      document.querySelector('.scissorEl').disabled=true;
+      document.querySelector('.roundResult').innerText = "Game Results: Wake up! Try again";
+      document.querySelector('.movesLeft').innerText ="Game Over";
     } 
     else {
       document.getElementById("cntDown").innerHTML = timeleft;
@@ -203,8 +208,7 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
 
   document.querySelector('.reload').addEventListener("click",function(){
     document.getElementById("myAudio7").play();
-  } );
-
+} );
 
 
 
@@ -218,20 +222,14 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
         let lose2 = new Audio('/audio/lose2.mp3');
         let win = new Audio('/audio/win.mp3');
         let tie = new Audio('/audio/tie.mp3');
+
         
-
-//We will now change the text "Choose your Move" within the '.move' element to "Game Over"
-        chooseMove.innerText = "GAME OVER";
-
 //Now it is time to create the if/else statements to declare the winner. The winn will be declared in the .roundResult element which currently states "ound Results:".
-
-        
-
-        if(playerScore > computerScore){
+        if (playerScore > computerScore){
             clearInterval(downloadTimer);
             document.getElementById("cntDown").innerHTML = "∞";
            
-            result.innerText = "Game Results: Player has won"
+            result.innerText = "Game Results: Player has won";
             result.style.color = "paleturquoise";
             win.play(); 
             movesLeft.innerText="Game Over";
@@ -269,24 +267,23 @@ document.querySelector('.chunliSound').addEventListener("click",function(){
             document.querySelector('.scissorEl').disabled=true;
         }
 
-//Now we need to trigger the buttons to restart the game.
-        reloadBtn.innerText= "Insert Coin (1)";
+        reloadBtn.innerText= "Insert Coin (0)";
         reloadBtn.addEventListener('click',() => {
             window.location.reload();
-            
+
         })
      }
 
+
+     
 
 const masterReload=document.querySelector('.masterreload');
     masterReload.addEventListener('click',() => {
     window.location.reload();  
 
-    document.querySelector('.masterreload').addEventListener("click",function(){
-        document.getElementById("myAudio4").play();
-    } );
-       //can't get this audo to work on purple reset button
 })
+
+
 
 
 

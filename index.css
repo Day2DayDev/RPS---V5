@@ -76,6 +76,7 @@
 .mainBtn-container {
     display: flex;
     justify-content: center;
+    margin-top:-30px;
 }
 
 .btn-container.chunli {
@@ -84,9 +85,10 @@
     background-size:cover;
     background-color:paleturquoise;
     margin: 20px;
+    padding:5px;
     width:fit-content;
-    height:170px;
-    border-radius: 20%;
+    height: 180px;
+    border-radius: 10%;
 }
 
 .btn-container.dalsim {
@@ -95,9 +97,10 @@
     background-size:cover;
     background-color:paleturquoise;
     margin: 20px;
+    padding:5px;
     width:fit-content;
-    height:170px;
-    border-radius: 20%;
+    height: 180px;
+    border-radius: 10%;
 }
 
 .btn-container.ryu {
@@ -106,9 +109,11 @@
     background-size:cover;
     background-color:paleturquoise;
     margin: 20px;
+    padding:5px;
     width:fit-content;
-    height:170px;
-    border-radius: 20%;
+    height: 180px;
+    border-radius: 10%;
+
 }
 
 img {
@@ -127,7 +132,6 @@ img {
     background-color: transparent;
     filter:grayscale(70%);
     transition: 1s ease;
-    
     
 }
 
@@ -233,9 +237,6 @@ img {
 }
 
 
-
-
-
 .choose{
     display: flex;
     flex-direction: column;
@@ -251,7 +252,14 @@ img {
 .musicBtn{
     background-color: transparent;
     border:none;
+}
 
+.musicBtn:hover {
+    filter: grayscale(0%);
+    transition: all 1s ease;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .newGameFinal{
