@@ -246,12 +246,12 @@ img {
 .jukeboxContainer {
     display:flex;
     justify-content: center;
+    margin-bottom: 20px;;
 }
 .musicBtn{
     background-color: transparent;
     border:none;
-    display: flex;
-    justify-content: center;
+
 }
 
 .newGameFinal{
